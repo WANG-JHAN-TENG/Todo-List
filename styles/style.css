@@ -125,7 +125,7 @@ body section button {
   cursor: pointer;
 }
 
-body section button.check {
+body section button.complete {
   background-color: #35eb35;
 }
 
