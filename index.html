@@ -1,39 +1,60 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo List</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Todo-list</title>
+    <link rel="stylesheet" href="style/jquery-ui.min.css" />
+    <link rel="stylesheet" href="style/bootstrap.min.css" />
+    <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
-    <header>
-      <h1>William Wang Todo List</h1>
-    </header>
-
-    <form>
-      <input type="text" />
-      <input type="number" min="1" max="12" placeholder="Mm" required />
-      <input type="number" min="1" max="31" placeholder="Dd" required />
-      <button type="submit">add todo list</button>
-    </form>
-
-    <br />
-    <br />
-
-    <div class="sort">
-      <button>Sort by date</button>
+    <div id="panel">
+      <h1>TodoList</h1>
+      <div id="todo-list">
+        <ul>
+          <li>
+            <div class="checkbox"></div>
+            <div class="content">Lorem, ipsum dolor.</div>
+            <div class="actions">
+              <div class="delete">x</div>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox"></div>
+            <div class="content">Lorem, ipsum dolor.</div>
+            <div class="actions">
+              <div class="delete">x</div>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox"></div>
+            <div class="content">Lorem, ipsum dolor.</div>
+            <div class="actions">
+              <div class="delete">x</div>
+            </div>
+          </li>
+          <li class="new">
+            <div class="checkbox"></div>
+            <div class="content" contenteditable="true"></div>
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <section></section>
+    <script id="todo-list-item-template" type="text/x-handlebars-template">
+      <li class="{{#if is_complete}}complete{{/if}}">
+          <div class="checkbox"></div>
+          <div class="content">{{content}}</div>
+          <div class="actions">
+              <div class="delete">x</div>
+          </div>
+      </li>
+    </script>
   </body>
-  <script src="./app.js"></script>
+  <script src="js/jquery3.6.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/handlebars.min-v4.7.7.js"></script>
+  <script src="js/action.js"></script>
 </html>
